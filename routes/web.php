@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Train;
 
 Route::get('/', function () {
-    return view('welcome');
+    $trains = Train::all();
+    return view('homepage', compact('trains'));
 });
